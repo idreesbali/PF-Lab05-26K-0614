@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-    int boarding=0, lag=0, asi=0;
+    int boarding=0, lag=0, asi=0, allowance=0
     printf("Enter passenger category(A for adult, S for student, C for senior citizen): ");
     char cat, type;
     float bag;
@@ -20,6 +20,7 @@ int main() {
         case 'A':
             switch(type) {
             case 'D':
+                allowance=20;
             if(bag<=20 ) {
                 lag=1;
                 if(doc=='Y') {
@@ -28,6 +29,7 @@ int main() {
             }
             break; 
             case 'I':
+                allowance=30;
             if(bag<=30) {
                 lag=1;
                 if(doc=='Y') {
@@ -40,6 +42,7 @@ int main() {
         case 'S':
         switch(type) {
             case 'D':
+                allowance=25;
             if(bag<=25) {
                 lag=1;
                 if(doc=='Y') {
@@ -48,6 +51,7 @@ int main() {
             } 
             break;
             case 'I':
+                allowance=35;
             asi=1;
             if(bag<=35) {
                 lag=1;
@@ -61,6 +65,7 @@ int main() {
         case 'C':
         switch(type) {
             case 'D':
+                allownace=30;
             if(bag<=30) {
                 lag=1;
                 if(doc=='Y') {
@@ -69,6 +74,7 @@ int main() {
             } 
             break;
             case 'I':
+                allowance=40;
             asi=1;
             if(bag<=40) {
                 lag=1;
@@ -83,6 +89,7 @@ int main() {
     
     printf("\nPassenger Category: %c", cat);
     printf("\nDestination Type: %c", type);
+    printf("Baggage Allowance: %d", allowance);
     if(lag==1) {
         printf("\nPermitted Baggage Allowance");
     } else {
@@ -117,7 +124,7 @@ int main() {
     if(asi==1) {
     printf("\nPriority assistance available");
     } else {
-        printf("\nPriority assistance available");
+        printf("\nPriority assistance not available");
     }
     if(boarding==1) {
         printf("\nPlease proceed to boarding");
