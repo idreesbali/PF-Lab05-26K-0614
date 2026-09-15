@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-    int boarding=0, lag=0, asi=0, allowance=0
+    int boarding=0, lag=0, asi=0, allowance=0;
     printf("Enter passenger category(A for adult, S for student, C for senior citizen): ");
     char cat, type;
     float bag;
@@ -65,7 +65,7 @@ int main() {
         case 'C':
         switch(type) {
             case 'D':
-                allownace=30;
+                allowance=30;
             if(bag<=30) {
                 lag=1;
                 if(doc=='Y') {
